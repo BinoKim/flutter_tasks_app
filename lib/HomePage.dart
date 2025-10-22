@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks_app/floatingButton.dart';
 import 'package:flutter_tasks_app/nothingToDo.dart';
 
 class HomePage extends StatelessWidget {
@@ -29,6 +30,8 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        floatingActionButton: FloatingButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       );
   }
 }
