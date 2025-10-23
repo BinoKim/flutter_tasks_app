@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 class ToDoDetailPage extends StatelessWidget {
 
+final String pageTitle = "BINO's Tasks";
+
 
   void ToDoEntity () {
     final String title;
@@ -14,7 +16,19 @@ class ToDoDetailPage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Text("To Do Detail Page");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          (pageTitle),
+          style: TextStyle(
+            fontSize: 20, 
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      
+      backgroundColor: Colors.grey,
+    );
   }
 
 }

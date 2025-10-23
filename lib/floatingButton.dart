@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks_app/ToDoDetailPage.dart';
 
 class FloatingButton extends StatelessWidget {
 
@@ -14,6 +15,7 @@ class FloatingButton extends StatelessWidget {
       onPressed: () {
         showModalBottomSheet(
           isScrollControlled: true,
+          useSafeArea: true,
           context: context,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.vertical(top: Radius.circular(16)),
@@ -28,19 +30,33 @@ class FloatingButton extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min, 
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  ElevatedButton(onPressed: () {
                     TextField(
+                      controller: TextEditingController(),
+                      //focusNode: FocusNode(),
                       decoration: const InputDecoration(
-                        hintText: '내용(선택)을 입력하세요',),
-                    );
-                  },
-                  child: const Text('새 할 일', style: TextStyle(fontSize: 16,))),
-                  const SizedBox(height: 12),
+                        hintText: '새 할 일',
+                        border: InputBorder.none,
+                      ),
+                        style: TextStyle(fontSize: 16,),
+                    ),
+                  
+                  
+                  //const SizedBox(height: 12),
                   
                   const SizedBox(height: 12),
                   ElevatedButton(
-                    onPressed: () => Navigator.pop(ctx),
+                    onPressed: () {
+                      Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ToDoDetailPage();
+                        },
+                      ),
+                      );
+                    },
                     child: const Text('저장'),
+                    
                   ),
                 ],
               ),
